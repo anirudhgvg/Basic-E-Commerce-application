@@ -1,0 +1,42 @@
+﻿<% include header.ejs%>
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/vp">View Products</a></li>
+        <li class="active"><a href="/login">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="content"
+    <div class="container-fluid" style="padding-left:80px">
+        <div style="height:80px"></div>
+        <p><%=errMsg%></p> 
+        <form class="form-horizontal" role="form" action="/login" method="post"  autocomplete="off">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="username">Username:</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" autofocus required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Password:</label>
+                <div class="col-sm-2">
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10" style="padding-top:10px">
+                    <input type="submit" class="btn btn-default" value="Login"/>
+                </div>
+            </div>
+        </form>
+        <div style="padding-left:140px;padding-top:100px">
+         <p style="align-content:center">New to Amazon? <a href="/register">Sign up</a> for a new account</p>
+            </div>
+ </div>
+
+<% include footer.ejs%>

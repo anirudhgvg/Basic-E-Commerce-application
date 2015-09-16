@@ -1,0 +1,17 @@
+{
+  "name": "ExpressApp2",
+  "version": "0.0.0",
+  "description": "ExpressApp2",
+  "main": "app.js",
+  "author": {
+    "name": "Anirudh",
+    "email": ""
+  },
+  "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "3.4.4",
+    "express-session": "^1.11.3",
+    "mysql": "^2.9.0",
+    "stylus": "*"
+  }
+}

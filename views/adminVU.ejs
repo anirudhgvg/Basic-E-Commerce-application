@@ -1,0 +1,57 @@
+﻿<% include header.ejs%>
+        
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="/adminHomepage">Home</a></li>
+        <li><a href="/adminVP">View Products</a></li>
+          <li><a href="/adminMP">Modify Products</a></li>
+          <li class="active"><a href="/adminVU">View Users</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content"
+    <div class="container-fluid" style="padding-left:80px">
+        <form class="form-horizontal" role="form" action="/adminVU" method="get"  autocomplete="off" style="padding-top:40px;padding-bottom:40px">
+            <fieldset>
+                <legend>Filter results:</legend>
+            <div class="form-group">
+                <label class="control-label col-sm-1" for="fname">Firstname:</label>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="fname" name="fname">
+                </div>
+                 <label class="control-label col-sm-1" for="lname">Lastname:</label>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="lname" name="lname">
+                </div>
+                <div class="col-sm-offset-1 col-sm-1">
+                    <input type="submit" class="btn btn-default" value="Search"/>
+                </div>
+            </div>
+            </fieldset>
+            </form>
+        <table class="table table-condensed table-bordered" style="width:75%" >
+            <caption style="text-align:center;color:black">Registered Users</caption>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < sample.length ; i++) { %>
+                    <tr>
+                        <td><%=sample[i].fname%></td>
+                        <td><%=sample[i].lname%></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+        </table>
+        <p><%=errMsg%></p>
+    </div>
+    </div>
+
+<% include footer.ejs%>

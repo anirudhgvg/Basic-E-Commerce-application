@@ -1,0 +1,62 @@
+﻿<% include header.ejs%>
+        
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <div>
+      <ul class="nav navbar-nav">
+        <li ><a href="/loggedUser">Home</a></li>
+        <li class="active"><a href="/userVP">View Products</a></li>
+          <li ><a href="/userUP">Update Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content"
+    <div class="container-fluid" style="padding-left:80px">
+        <p><%=errMsg%></p>
+        <form class="form-horizontal" role="form" action="/userVP" method="get"  autocomplete="off">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="id">Id:</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="id" name="id" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="cat">Category:</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="cat" name="cat">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="title">Title:</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Keyword for title">
+                </div>
+                <div class="col-sm-offset-2 col-sm-10" style="padding-top:10px">
+                    <input type="submit" class="btn btn-default" value="Search"/>
+                </div>
+            </div>
+        </form>
+        <table class="table table-condensed table-bordered" style="width:75%" >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < sample.length ; i++) { %>
+                    <tr>
+                        <td><%=sample[i].id%></td>
+                        <td><%=sample[i].title%></td>
+                         <td><%=sample[i].grp%></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+        </table>
+     </div>
+ </div>
+
+<% include footer.ejs%>
