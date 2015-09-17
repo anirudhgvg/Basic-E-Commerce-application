@@ -13,6 +13,7 @@ exports.loadPostLoginpage = function (req, res) {
         if (!err) {
             if (rows.length > 0) {
                 if (rows[0].adminflag == 1) {
+                    ses.admin = true;
                     console.log(ses.user + 'Admin Login Successful');
                     res.render('adminHomepage');
                 }   

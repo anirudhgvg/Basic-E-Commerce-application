@@ -52,7 +52,7 @@ exports.viewUsers = function (req, res) {
         conn.release();
     }
 
-    if (req.session.user) {
+    if (req.session.user && req.session.admin) {
         mysql.getConnection(searchUsers)
     }  
     else {
@@ -110,7 +110,7 @@ exports.loadadminViewProducts = function (req, res) {
         conn.release();
     }
     
-    if (req.session.user) {
+    if (req.session.user && req.session.admin) {
         var ses = req.session;
         console.log("View products request received for user" + ses.user);
         mysql.getConnection(viewProd)
@@ -154,7 +154,7 @@ exports.loadadminModifyProducts = function (req, res) {
         conn.release();
     }
 
-    if (req.session.user) {
+    if (req.session.user && req.session.admin) {
         var ses = req.session;
         console.log("Modify products request received for user" + ses.user);
         if (id1 != undefined) {
@@ -195,7 +195,7 @@ exports.loadadminPostModifyProducts = function (req, res) {
         conn.release();
     }
     
-    if (req.session.user) {
+    if (req.session.user && req.session.admin) {
         mysql.getConnection(modProd)
     }
     else {
